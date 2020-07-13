@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TaskTracker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <meta name="google-signin-client_id" content="660763330339-jonhe9afgjptbuk61duuqk34h81iamrc.apps.googleusercontent.com">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    </head>
+    <body>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        
+        <script>
+      //google callback. This function will redirect to our login servlet
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId());
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+        console.log('id_token: ' + googleUser.getAuthResponse().id_token);
+
+        var client = new XMLHttpRequest();
+         
+         
+        var data = googleUser.getAuthResponse().id_token;
+        client.open("POST", "http://localhost:8080/TaskTracker/resources/live.greiner.model.login", true);
+        client.setRequestHeader("Content-Type", "text/plain");
+        client.send(data);   
+         
+      }
+
+   </script>
+        
+    </body>
+</html>

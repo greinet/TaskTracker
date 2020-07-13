@@ -1,0 +1,15 @@
+{
+  "name": "tasktracker",
+  "version": "1.0.0",
+  "description": "Track you tasks online",
+  "author": "Andreas Greiner <andreasgreiner@online.de>",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "cors": "2.8.5",
+    "path": "0.12.7"
+  }
+}
