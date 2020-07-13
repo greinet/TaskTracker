@@ -20,10 +20,6 @@ app.get('/', function(req, res) {
 
 app.post('/verify', function(req, res) {
     
-    req.body.forEach(element => {
-        
-    });
-
     console.log(req.body);
 
     console.log("Token: "+req.body.id_token);
