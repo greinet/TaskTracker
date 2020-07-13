@@ -18,7 +18,14 @@ app.get('/', function(req, res) {
 
 app.post('/verify', function(req, res) {
     console.log("got verification request");
-    console.log(req.body());
+    var data = "";
+    req.on('data', function(chunk){ data += chunk})
+    req.on('end', function(){
+        req.rawBody = data;
+        req.jsonBody = JSON.parse(data);
+        next();
+    })
+
 });
 
 
