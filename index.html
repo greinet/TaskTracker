@@ -28,8 +28,8 @@
          
         var data = googleUser.getAuthResponse().id_token;
         client.open("POST", "https://tasks.greiner.wtf/verify", true);
-        client.setRequestHeader("Content-Type", "text/plain");
-        client.send(data);   
+        client.setRequestHeader("Content-Type", "application/json");
+        client.send(JSON.stringify({"id_token":"data"}));   
          
       }
 
