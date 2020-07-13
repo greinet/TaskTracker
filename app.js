@@ -16,7 +16,12 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.post('/verify', function(req, res) {
+    console.log("got verification request");
+    console.log(req.body());
+});
+
 
 app.listen(8080, () => {
- console.log("Server running on port 3000");
+ console.log("Server running on port 8080");
 });

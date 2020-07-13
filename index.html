@@ -27,7 +27,7 @@
          
          
         var data = googleUser.getAuthResponse().id_token;
-        client.open("POST", "http://localhost:8080/TaskTracker/resources/live.greiner.model.login", true);
+        client.open("POST", "https://tasks.greiner.wtf/verify", true);
         client.setRequestHeader("Content-Type", "text/plain");
         client.send(data);   
          
