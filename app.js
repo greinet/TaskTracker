@@ -22,10 +22,10 @@ app.get('/', function(req, res) {
 
 app.post('/verify', function(req, res) {
     
-    console.log(req);
 
     var token = req.body.id_token;
     console.log("New Token reqeust: "+token);
+    console.log(req.body);
 
     async function verify() {
         const ticket = await client.verifyIdToken({
