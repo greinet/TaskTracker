@@ -36,6 +36,8 @@ app.post('/verify', function(req, res) {
         const userid = payload['sub'];
         console.log("userid: "+userid)
         console.log(payload);
+
+        res.send('Hello World!');
       }
       verify().catch(console.error);
 
