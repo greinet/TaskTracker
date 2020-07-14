@@ -34,6 +34,7 @@ app.post('/verify', function(req, res) {
         const payload = ticket.getPayload();
         const userid = payload['sub'];
         console.log("userid: "+userid)
+        console.log(payload);
       }
       verify().catch(console.error);
 
