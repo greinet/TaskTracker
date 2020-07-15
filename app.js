@@ -37,7 +37,7 @@ app.post('/verify', function(req, res) {
         console.log("userid: "+userid)
         console.log(payload);
 
-        res.send('Hello World!');
+        res.send(payload);
       }
       verify().catch(console.error);
 
